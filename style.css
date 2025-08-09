@@ -1,0 +1,163 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  padding: 20px;
+}
+
+/* Container Card */
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 550px;
+  width: 100%;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 26px;
+  color: #333;
+}
+
+/* Progress Bar */
+.progress-bar {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.progress-bar::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  right: 15px;
+  height: 4px;
+  background: #d3d3d3;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.step {
+  position: relative;
+  z-index: 1;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #d3d3d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.step.active {
+  background: #2575fc;
+}
+
+.step.completed {
+  background: #6a11cb;
+}
+
+/* Form Sections */
+.form-section {
+  display: none;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.form-section.active {
+  display: block;
+}
+
+h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #444;
+}
+
+/* Inputs & Textareas */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0 20px;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 8px rgba(37, 117, 252, 0.3);
+  outline: none;
+}
+
+/* Buttons */
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #2575fc;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #6a11cb;
+  transform: translateY(-2px);
+}
+
+.prev-btn {
+  background: #aaa;
+}
+
+.prev-btn:hover {
+  background: #888;
+}
+
+/* Success Message */
+#responseMsg {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #2575fc;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+}

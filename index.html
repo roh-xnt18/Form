@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Multi-Section Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Registration Form</h1>
+    <div class="progress-bar">
+  <div class="step active">1</div>
+  <div class="step">2</div>
+  <div class="step">3</div>
+</div>
+
+    <form id="multiForm">
+      <!-- Section 1 -->
+      <div class="form-section active">
+        <h2>Personal Details</h2>
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <button type="button" class="next-btn">Next</button>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="form-section">
+        <h2>Address Details</h2>
+        <input type="text" name="address" placeholder="Address" required />
+        <input type="text" name="city" placeholder="City" required />
+        <button type="button" class="prev-btn">Back</button>
+        <button type="button" class="next-btn">Next</button>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="form-section">
+        <h2>Other Info</h2>
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="button" class="prev-btn">Back</button>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+    <p id="responseMsg"></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
