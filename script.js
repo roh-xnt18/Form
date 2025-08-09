@@ -2,7 +2,7 @@ const sections = document.querySelectorAll(".form-section");
 const steps = document.querySelectorAll(".step");
 let currentSection = 0;
 
-// Function to update progress steps
+
 function updateSteps() {
   steps.forEach((step, index) => {
     step.classList.remove("active", "completed");
@@ -20,7 +20,7 @@ document.querySelectorAll(".next-btn").forEach(btn => {
     sections[currentSection].classList.remove("active");
     currentSection++;
     sections[currentSection].classList.add("active");
-    updateSteps(); // ✅ Update progress bar
+    updateSteps();
   });
 });
 
@@ -30,7 +30,7 @@ document.querySelectorAll(".prev-btn").forEach(btn => {
     sections[currentSection].classList.remove("active");
     currentSection--;
     sections[currentSection].classList.add("active");
-    updateSteps(); // ✅ Update progress bar
+    updateSteps();
   });
 });
 
@@ -54,5 +54,5 @@ document.getElementById("multiForm").addEventListener("submit", async (e) => {
   sections.forEach(s => s.classList.remove("active"));
   currentSection = 0;
   sections[currentSection].classList.add("active");
-  updateSteps(); // ✅ Reset progress bar to step 1
+  updateSteps();
 });
