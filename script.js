@@ -1,8 +1,6 @@
 const sections = document.querySelectorAll(".form-section");
 const steps = document.querySelectorAll(".step");
 let currentSection = 0;
-
-
 function updateSteps() {
   steps.forEach((step, index) => {
     step.classList.remove("active", "completed");
